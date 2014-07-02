@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    
+    
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap responsive -->
+    <link href="~/Content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <!-- Font awesome - iconic font with IE7 support --> 
+    <script src="~/Scripts/boot-business.js"></script>
+
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-ie7.css" rel="stylesheet" />
+    <link href="~/Content/boot-business.css" rel="stylesheet" />
+    <!-- Bootbusiness theme -->
+
+    <style>
+
+        body {
+            background : #566D7E;
+
+        }
+
+        footer {
+            background : #566D7E;
+        }
+    </style>
+
+      </head>
+  <body>
+    <!-- Start: HEADER -->
+    <header>
+      <!-- Start: Navigation wrapper -->
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a href="#" class="brand brand-bootbus">Lavish Gift Shop</a>
+            <!-- Below button used for responsive navigation -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Start: Primary navigation -->
+            <div class="nav-collapse collapse">        
+              <ul class="nav pull-right">
+
+                <li><a href="/Home/Index">Home</a></li>
+                <li><a href="/Home/Ladies">Ladies</a></li>
+                <li><a href="/Home/Gents">Gents</a></li>
+                  <li><a href="/Home/AboutUs">About Us</a></li>
+                <li><a href="/Home/Register">Register</a></li>
+                <li><a href="/Home/SignIn">Sign in</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End: Navigation wrapper -->   
+    </header>
+
+    <br class="clear"/>
+    @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+
+
+  <style>
+
+      .footer, .push {
+        height: 4em;
+       }
+  </style>   
+
+        <!-- End: MAIN CONTENT -->
+    <!-- Start: FOOTER -->
+  <footer id="footer" class="footer">
+
+      <hr class="footer-divider"/>
+            <div class="container">
+        <div class="row">
+          <div class="span2">
+            <h4><i class=""></i> Products</h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">Product1</a></li>
+                <li><a href="#">Product2</a></li>
+                <li><a href="#">Product3</a></li>
+                <li><a href="#">All products</a></li>
+              </ul>
+            </nav>
+            <h4><i class=""></i> Services</h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">Service1</a></li>
+                <li><a href="#">Service2</a></li>
+                <li><a href="#">Service3</a></li>
+                <li><a href="#">All services</a></li>              
+              </ul>
+            </nav>
+          </div>
+          <div class="span2">
+            <h4><i class=""></i> About</h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">Our works</a></li>
+                <li><a href="#">Patnerships</a></li>
+                <li><a href="#">Leadership</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Blog</a></li>
+              <ul>
+            </nav>          
+          </div>
+          <div class="span2">
+            <h4><i class=""></i> Support</h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact us</a></li>            
+              </ul>
+            </nav>
+            <h4><i class=""></i> Legal</h4>
+            <nav>
+              <ul class="quick-links">
+                <li><a href="#">License</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Security</a></li>      
+              </ul>
+            </nav>            
+          </div>
+          <div class="span3">
+            <h4>Get in touch</h4>
+            <div class="">
+              <a href="#"><i class=""></i></a>
+              <a href="#"><i class=""></i></a>
+              <a href="#"><i class=""></i></a>                                         
+            </div>
+            <div class="">
+              <a href="#"><i class=""></i></a>              
+              <a href="#"><i class=""></i></a>
+              <a href="mailto:pucithza92@gmail.com"><i class=""></i></a>        
+            </div>
+            <div class="social-icons-row">
+              <i class=""></i> +92 333 4658115
+            </div>
+          </div>      
+          <div class="span3">
+            <h4>Get updated by email</h4>
+            <form>
+              <input type="text" name="email" placeholder="Email address">
+              <input type="submit" class="btn btn-primary" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider"/>
+      <div class="container">
+        <p>
+          &copy; 2014 Hammad Zahid, Inc. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+</body>
+</html>
+

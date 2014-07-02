@@ -1,0 +1,62 @@
+﻿
+@model LavishGiftCenter.Models.Item
+
+@{
+    ViewBag.Title = "SignedIn";
+    Layout = "~/Views/Shared/_LayoutSignedIn.cshtml";
+}
+
+
+
+
+
+
+<a href="/Home/ManageItems" style="color:whitesmoke"><h4>Manage Items</h4></a>
+<a href="/Home/AddItem" style="color:whitesmoke"><h4>Add Item</h4></a>
+
+
+
+<form class="navbar-form pull right" method="post" action="/Items/SearchResults">
+                  <div class="form-group">
+                      <input name="search" id="search"  placeholder="search Items"/>
+                  </div>
+                  <input name="b1" id="b1" type="button" class="btn btn-success"/>
+              </form>
+
+       <div id="checking"><h2>Items</h2></div>
+      <div id="my">
+            <div id="my1"></div>
+            <div id="my2"> </div>
+            <div id="my3"></div>
+      </div>
+      <script>
+
+          $(document).ready(function () {
+
+              $('#checking').hide();
+
+              $('#b1').click(function () {
+
+                  var search = $('#search').val();
+
+                  //alert('User Name ='+ userName);
+                  $('#checking').show();
+                  $.getJSON("/Home/SearchResults?search=" + search, function (data) {
+                      $('#checking').hide();
+                      if (data != null) {
+                         
+                          $('#checking').show();
+                          $('#my1').text(data.name);
+                          $('#my2').text(data.price);
+                          
+                      }
+                      else {
+                          $('#result').css("background-color", "red");
+                          $('#result').text("No Data is available");
+                      }
+                  });
+
+              });
+
+          });
+      </script>

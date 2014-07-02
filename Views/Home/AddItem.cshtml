@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "AddItem";
+    Layout = "~/Views/Shared/_LayoutSignedIn.cshtml";
+}
+@model LavishGiftCenter.Models.Item
+
+<h2>AddItem</h2>
+<form action="/Home/Save" method="post" enctype="multipart/form-data" >
+    <!---->
+        <label style="color:whitesmoke">Item Name</label>   
+       @Html.EditorFor(model => model.name, new  { @placeholder="name", id="name",name="name",value="Item Name"})
+       @Html.ValidationMessageFor(model => model)
+        <br />
+
+        <label style="color:white">Item Category</label>
+       @Html.EditorFor(model => model.category, new  { @placeholder="category", id="category",name="category",value="Item category"})
+       @Html.ValidationMessageFor(model => model)
+        <br />
+
+
+ @*       <label style="color:white">Item Section</label>
+       @Html.EditorFor(model => model.section, new  { @placeholder="section", id="section",name="section",value="Item section"})
+       @Html.ValidationMessageFor(model => model)*@
+    Select Category:
+    <select id="CategorySelector" name="section">
+        <option value="0">-Select- </option>
+        <option value="Ladies"> Ladies   </option>
+        <option value="Gents"> Gents </option>
+    </select>    
+    
+    <br />
+    
+    <label style="color:whitesmoke">Upload Picture</label><input type="file" name="image" /> 
+    <br />
+
+    <input type="Submit" value="Upload" />
+
+</form>

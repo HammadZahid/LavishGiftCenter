@@ -1,0 +1,34 @@
+﻿@model LavishGiftCenter.Models.Item
+@{
+    ViewBag.Title = "DeleteItem";
+    Layout = "~/Views/Shared/_LayoutSignedIn.cshtml";
+}
+
+
+
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Student</legend>
+
+    <div >
+        
+       Name:  @Model.name
+    </div>
+    
+    <div >
+        Price : @Model.price
+    </div>
+    
+
+    <div >
+        Section : @Model.section
+    </div>
+   
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back", "SignedIn")
+    </p>
+}

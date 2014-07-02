@@ -1,0 +1,66 @@
+﻿
+@model LavishGiftCenter.Models.Item
+
+@{
+    ViewBag.Title = "UpdateItem";
+}
+
+<h2>UpdateItem</h2>
+
+
+<!--<form action="/Home/Updating" method="post" enctype="multipart/form-data" >-->
+   @using (Html.BeginForm("UpdateItem","Home",FormMethod.Post,new { enctype="multipart/form-data" })) {
+    <!---->@*
+         
+       @Html.EditorFor(model => model.name, new  { @placeholder="@Model.name", id="name",name="name",value="Item Name"})
+       @Html.ValidationMessageFor(model => model)
+         @*<input type="text" value=@ViewBag.X.name name="name" placeholder="Item name"/>*@
+       @Html.LabelFor(Model=>Model.name) 
+       @Html.TextBoxFor(Model=>Model.name)
+        <br />
+
+
+       @*@Html.EditorFor(model => model.category, new  { @placeholder="@Model.category", id="category",name="category",value="Item category"})
+       @Html.ValidationMessageFor(model => model)*@
+        @*<input type="text" value=@ViewBag.X.category name="category" placeholder="Item category"/>    
+       
+    *@
+      
+       @Html.LabelFor(Model=>Model.category)
+       @Html.TextBoxFor(Model => Model.category)
+         <br />
+
+
+        <label style="color:white">Item Section</label>@*
+       @Html.EditorFor(model => model.section, new  { @placeholder="@Model.section", id="section",name="section",value="Item section"})
+       @Html.ValidationMessageFor(model => model)*@
+        @Html.LabelFor(Model=>Model.section) 
+       @Html.TextBoxFor(Model=>Model.section)
+           <br />
+    
+         <label style="color:white">Item Price</label>
+       @*@Html.EditorFor(model => model.section, new  { @placeholder="@Model.section", id="section",name="section",value="Item section"})
+       @Html.ValidationMessageFor(model => model)*@
+       @*<input type="text" value=@ViewBag.X.price name="price" placeholder="Item Price"/>*@
+       
+        @Html.LabelFor(Model=>Model.price) 
+       @Html.TextBoxFor(Model=>Model.price)
+       
+       <br />
+
+         
+       @*@Html.EditorFor(model => model.section, new  { @placeholder="@Model.section", id="section",name="section",value="Item section"})
+       @Html.ValidationMessageFor(model => model)*@
+       @*<input type="text" value=@ViewBag.X.detail name="detail" placeholder="Item detail"/>*@
+    
+       @Html.LabelFor(Model=>Model.detail)
+       @Html.TextBoxFor(Model=>Model.detail)
+       <br />
+
+       @Html.LabelFor(Model=>Model.image)
+       @Html.TextBoxFor(Model=>Model.image, "", new { type="file",name="image", @class="input-file"})
+    <br />
+
+    <input type="Submit" value="UPDATE" />
+   }
+<!--</form>-->

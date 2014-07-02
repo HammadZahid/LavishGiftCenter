@@ -1,0 +1,200 @@
+﻿@{
+    ViewBag.Title = "SignIn";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Lavish Sign In Form</title>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css">
+
+
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+    
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    -->
+    <style type="text/css">
+    <!--
+    .clear {
+	clear: both;
+    }
+
+    .custom-form {
+	background: #ff006e;
+	color: #FFF;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 10px 30px;
+    }
+-->
+    </style>
+</head>
+
+
+
+
+<body>
+<!--
+Search for "REPLACE-THIS" for all fields to replace with your own values.
+-->
+
+
+<div class="container">
+	<div class="row pull-right">
+	
+		@*<div class="col-md-4"></div>
+		
+        <div class="col-md-4">*@
+			<div class="custom-form">
+				<!--<div class="row">-->
+				<h1 class="">Lavish Sign In</h1>
+					<!-- Start Aweber Form Code -->
+					<form method="post" class="af-form-wrapper" action="/Home/logedIn" id="myForm" name="myForm" >
+		
+
+		
+						<div id="af-form-REPLACE-THIS" class="af-form">
+							<div id="af-body-REPLACE-THIS" class="af-body af-standards">
+								<div class="">
+									<div class="form-group">
+										<h3>Sign In for Shop!</h3>
+										<p class="signup">Join today and you'll receive our Exiting Offers!</p>
+									</div>
+								</div>	
+								
+								
+                                
+								<div class="af-element">
+                                    <div id="checking">checking ...</div>
+										<div class="form-group af-textWrap">
+											<input id="username" type="text" name="UserName" class="form-control text" value="" placeholder="username"  tabindex="500" />
+										</div>
+                                    
+									<div class="clear"></div>
+                                    <div id="result"></div>
+								</div>
+								
+								
+
+								
+								<div class="af-element">
+										<div class="form-group af-textWrap">
+											<input class="form-control text" id="pass1" type="text" name="Password" value="" placeholder="password" tabindex="501"  />
+										</div>
+									<div class="clear"></div>
+								</div>
+								
+								
+
+								
+								
+								<div class="af-element buttonContainer">
+									<div class="form-group">
+										<input name="submit" class="btn btn-primary btn-md submit" type="submit" value="SignIn" tabindex="502" />
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+						</div>
+						
+					</form>
+					<!-- End Aweber Form Code -->
+					
+				</div><!-- end row -->
+			</div><!-- end custom-form -->
+        
+		</div><!-- end col-lg-12 -->
+      <div class="col-md-4"></div>
+
+
+
+
+
+<script type="text/javascript">
+
+    (function() {
+        var IE = false;
+        if (!IE) { return; }
+        if (document.compatMode && document.compatMode == 'BackCompat') {
+            if (document.getElementById("af-form-REPLACE")) {
+                document.getElementById("af-form-REPLACE").className = 'af-form af-quirksMode';
+            }
+            if (document.getElementById("af-body-REPLACE")) {
+                document.getElementById("af-body-REPLACE").className = "af-body inline af-quirksMode";
+            }
+            if (document.getElementById("af-header-REPLACE")) {
+                document.getElementById("af-header-REPLACE").className = "af-header af-quirksMode";
+            }
+            if (document.getElementById("af-footer-REPLACE")) {
+                document.getElementById("af-footer-REPLACE").className = "af-footer af-quirksMode";
+            }
+        }
+    })();
+
+</script>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#checking').hide();
+
+            $('#username').keyup(function () {
+
+                var userName = $('#username').val();
+
+                //alert('User Name ='+ userName);
+                $('#checking').show();
+                $.getJSON("/Home/CheckUserName?UserName=" + userName, function (data) {
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').css("background-color", "red");
+                        $('#result').text("User already exists");
+
+                    }
+                    else {
+                        $('#result').css("background-color", "green");
+                        $('#result').text("User Name is available");
+                    }
+                });
+
+            });
+
+        });
+
+        $('#pass2').keyup(function () {
+            var pass2 = $('#pass2').val();
+            var pass1 = $('#pass1').val();
+
+            //alert('User Name ='+ userName);
+            $('#checking').show();
+
+            if (pass1 != pass2) {
+                $('#result_pass2').css("background-color", "red");
+                $('#result_pass2').text("Passwords Not Matching");
+            }
+            else if (pass1 == pass2) {
+                $('#result_pass2').css("background-color", "green");
+                $('#result_pass2').text("Passwords Matched");
+            }
+        });
+                
+            
+
+
+    </script>
+
+
+
+</body>
+</html>
+
